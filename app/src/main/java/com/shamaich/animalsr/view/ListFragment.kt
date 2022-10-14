@@ -67,9 +67,18 @@ class ListFragment : Fragment() {
         viewModel.loadError.observe(viewLifecycleOwner, errorLiveDataObserver)
         viewModel.refresh()
 
-        _binding!!.animalrecyclerviewlist.apply {
+        _binding?.animalrecyclerviewlist?.apply {
             layoutManager = GridLayoutManager(context, 2)
             adapter = listAdapter
+        }
+
+        _binding?.refreshLayout?.setOnRefreshListener {
+            _binding?.animalrecyclerviewlist?.visibility = View.GONE
+            _binding?.listError?.visibility = View.GONE
+            _binding?.refreshLayout?.visibility = View.VISIBLE
+            viewModel.refresh()
+            _binding?.refreshLayout?.isRefreshing = false
+
         }
 
     }
