@@ -1,5 +1,6 @@
 package com.shamaich.animalsr.view
 
+import android.text.Layout
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -27,6 +28,7 @@ class AnimalListAdapter(private val animalList: ArrayList<Animal>):
     class AnimalViewHolder(var view: View): RecyclerView.ViewHolder(view) {
         var animalName: TextView = view.findViewById(R.id.animalName)
         var animalImage: ImageView = view.findViewById(R.id.animalImage)
+
     }
 
     override fun getItemCount() = animalList.size
@@ -41,6 +43,7 @@ class AnimalListAdapter(private val animalList: ArrayList<Animal>):
 
         holder.animalName.text = animalList[position].name
         holder.animalImage.loadImage(animalList[position].imageUrl, getProgressDrawable(holder.view.context))
+        holder
 
     }
 
