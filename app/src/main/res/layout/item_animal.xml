@@ -6,7 +6,7 @@
     android:layout_height="wrap_content">
 
     <ImageView
-        android:id="@+id/animalimage"
+        android:id="@+id/animalImage"
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:scaleType="center"
@@ -17,15 +17,16 @@
 
     <TextView
         android:id="@+id/animalName"
+        style="@style/Title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#afff"
         android:gravity="center"
         android:padding="4dp"
         android:text="Animal name"
-        style="@style/Title"
         app:layout_constraintBottom_toBottomOf="@+id/animalimage"
         app:layout_constraintEnd_toEndOf="@+id/animalimage"
-        app:layout_constraintStart_toStartOf="@+id/animalimage" />
+        app:layout_constraintStart_toStartOf="@+id/animalImage"
+        app:layout_constraintTop_toTopOf="@+id/animalImage" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
